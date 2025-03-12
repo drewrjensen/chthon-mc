@@ -11,6 +11,7 @@ services:
       - /dev/fuse
     hostname: chthon-mc
     image: ghcr.io/drewrjensen/chthon-mc:${TAG}
+    # image: drewrjensen/chthon-mc:TESTING
     labels:
       - "com.docker.compose.project=chthon-mc"
       - "com.docker.compose.service=chthon-mc"
@@ -22,6 +23,8 @@ services:
         max-file: "3"
     ports:
       - 8080:8080
+      - 19132:19132
+      - 24454:24454
       - 25565:25565
     restart: unless-stopped
     security_opt:

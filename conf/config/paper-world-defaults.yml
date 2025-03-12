@@ -15,7 +15,7 @@
 _version: 31
 anticheat:
   anti-xray:
-    enabled: false
+    enabled: true
     engine-mode: 1
     hidden-blocks:
     - copper_ore
@@ -301,7 +301,7 @@ scoreboards:
   allow-non-player-entities-on-scoreboards: true
   use-vanilla-world-scoreboard-name-coloring: false
 spawn:
-  allow-using-signs-inside-spawn-protection: false
+  allow-using-signs-inside-spawn-protection: true
 tick-rates:
   behavior:
     villager:
