@@ -87,7 +87,7 @@ jobs:
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Content-Type: application/octet-stream" \
             --data-binary @chthon-mc-compose.yml \
-            "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.release_id }}/assets?name=paper-srv-compose.yml"
+            "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.release_id }}/assets?name=chthon-mc-compose.yml"
       
           # Upload .env
           curl -L -X POST \
