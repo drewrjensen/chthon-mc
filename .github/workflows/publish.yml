@@ -1,0 +1,97 @@
+name: Create and publish a Docker image
+
+on:
+  push:
+    branches: ['main']
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      attestations: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set short SHA for release
+        id: short_sha
+        run: |
+          SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
+          echo "sha_short=$SHORT_SHA" >> $GITHUB_ENV
+          echo "sha_short=$SHORT_SHA" >> $GITHUB_OUTPUT
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=${{ steps.short_sha.outputs.SHA_SHORT }},enable=${{ github.event_name == 'push' }}
+
+      - name: Build and push Docker image
+        id: push
+        uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Replace {{TAG}} in .env / paper-srv-compose.yml
+        id: replace_tag
+        run: |
+          sed -i "s|{{TAG}}|${{ steps.short_sha.outputs.SHA_SHORT }}|g" .env
+          sed -i "s|{{TAG}}|${{ steps.short_sha.outputs.SHA_SHORT }}|g" paper-srv-compose.yml
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Create GitHub Release
+        id: create_release
+        run: |
+          RELEASE_TAG=${{ steps.short_sha.outputs.SHA_SHORT }}
+          echo "Creating release for tag ${RELEASE_TAG}"
+          RESPONSE=$(curl -s -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -d '{"tag_name": "'"${RELEASE_TAG}"'", "name": "'"${RELEASE_TAG}"'", "body": "Release for commit ${{ github.sha }}"}' \
+            https://api.github.com/repos/${{ github.repository }}/releases)
+          if echo "$RESPONSE" | grep -q "Validation Failed"; then
+            echo "Error: Failed to create release"
+            echo "$RESPONSE"
+            exit 1
+          fi
+          echo "Release created: $RESPONSE"
+          RELEASE_ID=$(echo $RESPONSE | jq -r .id)
+          echo "::set-output name=release_id::$RELEASE_ID"
+
+      - name: Upload paper-srv-compose.yml as release asset
+        id: upload_compose
+        run: |
+          # Upload paper-srv-compose.yml
+          curl -L -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Content-Type: application/octet-stream" \
+            --data-binary @paper-srv-compose.yml \
+            "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.release_id }}/assets?name=paper-srv-compose.yml"
+      
+          # Upload .env
+          curl -L -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Content-Type: application/octet-stream" \
+            --data-binary @.env \
+            "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.release_id }}/assets?name=.env"
