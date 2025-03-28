@@ -9,6 +9,7 @@ EXPOSE 25565
 WORKDIR /srv/papermc
 RUN mkdir -p /srv/papermc/config
 COPY conf .
+RUN mkdir -p /srv/papermc/plugins
 COPY plugins/ plugins/
 RUN mkdir -p /srv/papermc/worlds/Chthon/datapacks
 COPY datapacks/ worlds/Chthon/datapacks
