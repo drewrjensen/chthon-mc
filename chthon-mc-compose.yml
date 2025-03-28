@@ -39,5 +39,4 @@ services:
         hard: 65536
     working_dir: /srv/papermc
     volumes:
-      - /srv/papermc/plugins:/srv/papermc/plugins
       - /srv/papermc/worlds:/srv/papermc/worlds

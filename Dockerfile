@@ -6,6 +6,8 @@ EXPOSE 19132
 EXPOSE 24454
 EXPOSE 25565
 
+VOLUME ["/srv/papermc/worlds"]
+
 RUN mkdir -p /srv/papermc
 WORKDIR /srv/papermc
 RUN mkdir -p config
