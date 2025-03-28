@@ -9,8 +9,8 @@ EXPOSE 25565
 WORKDIR /srv/papermc
 RUN mkdir -p /srv/papermc/config
 COPY conf .
-COPY plugins plugins/
+COPY plugins/ plugins/
 RUN mkdir -p /srv/papermc/worlds/Chthon/datapacks
-COPY datapacks worlds/Chthon/datapacks
+COPY datapacks/ worlds/Chthon/datapacks
 COPY start.sh .
 ENTRYPOINT ["bash", "./start.sh"]
