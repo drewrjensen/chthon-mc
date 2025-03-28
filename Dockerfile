@@ -1,5 +1,5 @@
 # FROM ghcr.io/drewrjensen/paper-srv:${VERSION}
-FROM ghcr.io/drewrjensen/paper-srv:c3c6bf3
+FROM ghcr.io/drewrjensen/paper-srv:f54476c
 
 EXPOSE 8080
 EXPOSE 19132
