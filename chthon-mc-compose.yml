@@ -22,11 +22,12 @@ services:
         max-size: "10m"
         max-file: "3"
     ports:
-      - 8080:8080
-      - 19132:19132
-      - 19133:19133
-      - 24454:24454
-      - 25565:25565
+      - 8080:8080/tcp
+      - 19132:19132/tcp
+      - 19133:19133/tcp
+      - 24454:24454/udp
+      - 25565:25565/tcp
+      - 25565:25565/udp
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
