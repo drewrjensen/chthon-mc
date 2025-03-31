@@ -16,6 +16,6 @@ COPY conf .
 RUN mkdir -p plugins
 COPY plugins/ plugins/
 RUN mkdir -p /srv/papermc/worlds/Chthon/datapacks
-COPY datapacks/ worlds/Chthon/datapacks
+COPY datapacks/ /srv/papermc/worlds/Chthon/datapacks
 COPY start.sh .
 ENTRYPOINT ["bash", "./start.sh"]
