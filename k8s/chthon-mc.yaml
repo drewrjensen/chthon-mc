@@ -41,8 +41,7 @@ spec:
             - containerPort: 8804 # Plan
             - containerPort: 19132 # Geyser UDP
             - containerPort: 19133 # Geyser UDP
-            - containerPort: 24454 # Geyser UDP
-            - containerPort: 24455 # Geyser TCP
+            - containerPort: 24454 # MC Voice UDP
             - containerPort: 25565 # Java Edition
           env:
             - name: JAVA_TOOL_OPTIONS
@@ -84,16 +83,11 @@ spec:
       targetPort: 19133
       nodePort: 30133
       protocol: UDP
-    - name: geyser-udp-24454
+    - name: mcvoice-udp-24454
       port: 24454
       targetPort: 24454
       nodePort: 30454
       protocol: UDP
-    - name: geyser-tcp-24455
-      port: 24455
-      targetPort: 24455
-      nodePort: 30455
-      protocol: TCP
     - name: java
       port: 25565
       targetPort: 25565
