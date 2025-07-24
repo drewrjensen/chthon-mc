@@ -15,7 +15,8 @@ VOLUME ["/srv/papermc/worlds"]
 WORKDIR /srv/papermc
 
 RUN apk add --no-cache bash screen curl
-RUN curl https://api.papermc.io/v2/projects/paper/versions/${PAPERMC_VERSION}/builds/${PAPERMC_BUILD}/downloads/paper-${PAPERMC_VERSION}-${PAPERMC_BUILD}.jar
+RUN curl -o paper-${PAPERMC_VERSION}-${PAPERMC_BUILD}.jar \
+  https://api.papermc.io/v2/projects/paper/versions/${PAPERMC_VERSION}/builds/${PAPERMC_BUILD}/downloads/paper-${PAPERMC_VERSION}-${PAPERMC_BUILD}.jar
 
 COPY plugins/ plugins/
 COPY root .
