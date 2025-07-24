@@ -31,15 +31,20 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "PAPERMC_VERSION=$PAPERMC_VERSION" >> $GITHUB_ENV
           echo "PAPERMC_BUILD=$PAPERMC_BUILD" >> $GITHUB_ENV
+          echo "PAPERMC_VERSION=$PAPERMC_VERSION" >> $GITHUB_OUTPUT
+          echo "PAPERMC_BUILD=$PAPERMC_BUILD" >> $GITHUB_OUTPUT
+
+      - name: Set dynamic env from version step
+        run: echo "ENV READY"
+        env:
+          PAPERMC_VERSION: ${{ steps.version.outputs.PAPERMC_VERSION }}
+          PAPERMC_BUILD: ${{ steps.version.outputs.PAPERMC_BUILD }}
 
       - name: Verify tag matches .env VERSION
         run: |
-          TAG_VERSION="${GITHUB_REF##*/}"        # Get full tag name (e.g. v1.21.7-1)
+          TAG_VERSION="${GITHUB_REF##*/}"
           ENV_VERSION=$(source .env && echo -n "${MC_VERSION}-${CMC_VERSION}")
-
-          # Strip 'v' prefix from tag
           TAG_VERSION_STRIPPED="${TAG_VERSION#v}"
-
           echo "Git tag (${TAG_VERSION}) vs .env version (${ENV_VERSION})"
           if [ "$TAG_VERSION_STRIPPED" != "$ENV_VERSION" ]; then
             echo "❌ Git tag (${TAG_VERSION}) does not match .env version (${ENV_VERSION})"
@@ -70,8 +75,8 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            PAPERMC_VERSION=${{ env.PAPERMC_VERSION }}
-            PAPERMC_BUILD=${{ env.PAPERMC_BUILD }}
+            PAPERMC_VERSION=${{ steps.version.outputs.PAPERMC_VERSION }}
+            PAPERMC_BUILD=${{ steps.version.outputs.PAPERMC_BUILD }}
 
       - name: Replace {{TAG}} in .env and compose.yaml
         run: |
@@ -88,9 +93,7 @@ jobs:
         run: |
           VERSION=${{ steps.version.outputs.version }}
           TAG="v$VERSION"
-
           echo "Creating GitHub release for $TAG"
-
           gh release create "$TAG" \
             --title "$TAG" \
             --notes "Release for version $VERSION" \
