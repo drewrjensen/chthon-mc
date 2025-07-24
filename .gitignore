@@ -12,6 +12,7 @@
 *.zip
 
 !plugins/*.jar
+!root/*.jar
 
 .cache/
 backup/
