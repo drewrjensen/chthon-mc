@@ -29,6 +29,8 @@ jobs:
           VERSION="${MC_VERSION}-${CMC_VERSION}"
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "PAPERMC_VERSION=$PAPERMC_VERSION" >> $GITHUB_ENV
+          echo "PAPERMC_BUILD=$PAPERMC_BUILD" >> $GITHUB_ENV
 
       - name: Verify tag matches .env VERSION
         run: |
@@ -67,6 +69,9 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            PAPERMC_VERSION=${{ env.PAPERMC_VERSION }}
+            PAPERMC_BUILD=${{ env.PAPERMC_BUILD }}
 
       - name: Replace {{TAG}} in .env and compose.yaml
         run: |
@@ -94,21 +99,7 @@ jobs:
 
       - name: Upload release assets
         run: |
-          for file in compose.yaml .env; do
-            curl -L -X POST \
-              -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-              -H "Content-Type: application/octet-stream" \
-              --data-binary @$file \
-              "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.release_id }}/assets?name=$(basename $file)"
-          done
-
-          for file in k8s/*; do
-            if [ -f "$file" ]; then
-              echo "Uploading $file..."
-              curl -L -X POST \
-                -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-                -H "Content-Type: application/octet-stream" \
-                --data-binary @$file \
-                "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.release_id }}/assets?name=$(basename $file)"
-            fi
-          done
+          TAG="v${{ steps.version.outputs.version }}"
+          gh release upload "$TAG" compose.yaml .env k8s/* --repo "${{ github.repository }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
