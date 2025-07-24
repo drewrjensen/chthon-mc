@@ -91,7 +91,7 @@ jobs:
       - name: Render chthon-mc.yaml with envsubst
         run: |
           mkdir -p k8s
-          envsubst < chthon-mc.yaml > k8s/chthon-mc.yaml
+          envsubst < k8s/chthon-mc.yaml > k8s/chthon-mc.yaml
 
       - name: Create GitHub Release
         id: create_release
