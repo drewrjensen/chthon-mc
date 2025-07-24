@@ -32,9 +32,15 @@ jobs:
 
       - name: Verify tag matches .env VERSION
         run: |
-          TAG_VERSION="${GITHUB_REF#refs/tags/v}"
-          if [ "$TAG_VERSION" != "${{ steps.version.outputs.version }}" ]; then
-            echo "❌ Git tag (v$TAG_VERSION) does not match .env version (${{ steps.version.outputs.version }})"
+          TAG_VERSION="${GITHUB_REF##*/}"        # Get full tag name (e.g. v1.21.7-1)
+          ENV_VERSION=$(source .env && echo "${MC_VERSION}-${CMC_VERSION}")
+
+          # Strip 'v' prefix from tag
+          TAG_VERSION_STRIPPED="${TAG_VERSION#v}"
+
+          echo "Git tag (${TAG_VERSION}) vs .env version (${ENV_VERSION})"
+          if [ "$TAG_VERSION_STRIPPED" != "$ENV_VERSION" ]; then
+            echo "❌ Git tag (${TAG_VERSION}) does not match .env version (${ENV_VERSION})"
             exit 1
           fi
 
