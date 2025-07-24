@@ -53,7 +53,7 @@ spec:
                 name: chthon-mc-env
           volumeMounts:
             - name: data
-              mountPath: /data
+              mountPath: /srv/papermc/worlds
           resources:
             requests:
               memory: "2Gi"
