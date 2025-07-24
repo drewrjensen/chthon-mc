@@ -33,7 +33,7 @@ spec:
     spec:
       nodeSelector:
         kubernetes.io/hostname: chthon-srv-0
-      image-pull-secrets:
+      imagePullSecrets:
         - name: ghcr-secret
       containers:
         - name: minecraft
