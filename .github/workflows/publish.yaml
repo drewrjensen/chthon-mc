@@ -33,7 +33,7 @@ jobs:
       - name: Verify tag matches .env VERSION
         run: |
           TAG_VERSION="${GITHUB_REF##*/}"        # Get full tag name (e.g. v1.21.7-1)
-          ENV_VERSION=$(source .env && echo "${MC_VERSION}-${CMC_VERSION}")
+          ENV_VERSION=$(source .env && echo -n "${MC_VERSION}-${CMC_VERSION}")
 
           # Strip 'v' prefix from tag
           TAG_VERSION_STRIPPED="${TAG_VERSION#v}"
@@ -68,10 +68,10 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Replace {{TAG}} in .env and chthon-mc-compose.yml
+      - name: Replace {{TAG}} in .env and chthon-mc-compose.yaml
         run: |
           sed -i "s|{{TAG}}|${{ steps.version.outputs.version }}|g" .env
-          sed -i "s|{{TAG}}|${{ steps.version.outputs.version }}|g" chthon-mc-compose.yml
+          sed -i "s|{{TAG}}|${{ steps.version.outputs.version }}|g" chthon-mc-compose.yaml
 
       - name: Install jq
         run: sudo apt-get install -y jq
@@ -93,9 +93,9 @@ jobs:
           RELEASE_ID=$(echo "$RESPONSE" | jq -r .id)
           echo "release_id=$RELEASE_ID" >> $GITHUB_OUTPUT
 
-      - name: Upload chthon-mc-compose.yml and .env as release assets
+      - name: Upload chthon-mc-compose.yaml and .env as release assets
         run: |
-          for file in chthon-mc-compose.yml .env; do
+          for file in chthon-mc-compose.yaml .env; do
             curl -L -X POST \
               -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
               -H "Content-Type: application/octet-stream" \
