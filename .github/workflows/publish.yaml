@@ -25,7 +25,7 @@ jobs:
       - name: Load VERSION from .env
         id: version
         run: |
-          source .env
+          export $(grep -v '^#' .env | xargs)
           VERSION="${MC_VERSION}-${CMC_VERSION}"
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "version=$VERSION" >> $GITHUB_OUTPUT
