@@ -1,0 +1,74 @@
+# +---------------------------------------------------------------------------------------------------------+
+# PrefiX is gemaakt door martijnpu
+# Bestand gegenereerd in versie v7.5
+# De standaard waardes voor alle berichten zijn te vinden in de documentatie:
+# https://hangar.papermc.io/martijnpu/PrefiX/pages/Documentation/Languages
+# Vertaald naar het Nederlands door @martijnpu
+# +---------------------------------------------------------------------------------------------------------+
+
+prefix: "&ePrefiX &3➢ "
+
+language: "Nederlands"
+messages:
+  header: "&6&m&l+-----------------&6&l= &ePrefiX &6&l=&6&m&l-----------------+&r"
+  footer: "&6&m&l+------------------------------------------+"
+  command:
+    unknown: "&cBedoel je '/%COMMAND% help'?"
+    usage: "&cGebruik alsjeblieft '%COMMAND%'"
+    reload: "&6Config is succesvol herladen"
+    reset: "&6Reset %TYPE%"
+    changed: "&6%TYPE% aangepast naar &r%TAG%"
+    removed: "&7%TYPE% verwijderd"
+    reset-other: "&6%TYPE% van %NAME% gereset"
+    changed-other: "&6%TYPE% van %NAME% aangepast"
+    removed-other: "&6%TYPE% van %NAME% verwijderd"
+  color:
+    apply: "&6%TYPE% kleur aangepast naar %COLOR%"
+    reset: "&6Reset %TYPE% kleur"
+    target: "&6%TYPE% kleur aangepast van %NAME%"
+    invalid: "&cOngeldige kleur. Kies een kleur uit '/prefix list'"
+  list:
+    apply: "&aKlik om dit toe te passen aan je %TYPE%"
+    no-perm: "&cGeen rechten om dit te gebruiken voor je %TYPE%"
+    template-header: "&7&lSjablonen:"
+  updater:
+    force: "&cDe server gebruikt al een nieuwe versie van PrefiX dan beschikbaar is. Gebruik '&fforce&c' om alsnog te updaten"
+    success: "&aDe laatste versie van PrefiX is succesvol geïnstalleerd. Herstart de server om toe te passen"
+  error:
+    player: "&cSpeler '&6%NAME%&c' bestaat niet! (of is offline)"
+    command: "&cEr is een fout opgetreden tijdens het uitvoeren van dit commando. Bekijk de console voor meer informatie"
+    need-target: "&cJe moet een speler kiezen om dit commando te gebruiken!"
+    blacklist: "&cJe hebt een verboden woord gebruikt"
+    length: "&cJe mag niet meer dan %SIZE% karakters gebruiken"
+    length-colorcode: "&cJe mag niet meer dan %SIZE% karakters gebruiken exclusief kleurcodes!"
+    character: "&cJe hebt een verboden karakter gebruikt!"
+    colorcode: "&cJe mag geen kleurcodes gebruiken!"
+    hexadecimal: "&cHexadecimale kleuren zijn uitgeschakeld door de adminstator"
+    bracket: "&cHaakjes zijn uitgeschakeld door de admin"
+    permission:
+      command: "&cJe hebt geen rechten om dit commando te gebruiken"
+      color: "&cJe mag deze kleur niet gebruiken"
+      target: "&cJe mag niet anderen kiezen"
+    template:
+      disabled: "&cSjabloons zijn uitgeschakeld door de administrator"
+      unknown: "&cSjabloon '%TEMPLATE%' bestaat niet"
+  help: |
+    &6➢ &a/prefix [text] &7- &eVerander de tekst van je prefix
+    &6➢ &a/prefix color [color] &7- &eVerander de kleur van je prefix
+    &6➢ &a/prefix name [color] &7- &eVerander de kleur van je naam
+    &6➢ &a/prefix list &7- &eLijst met alle beschikbare kleuren
+    &6➢ &a/prefix reset &7- &eVerander je prefix terug naar de standaard kleur
+    &6➢ &a/prefix bracket [color] &7- &eVerander de kleur van je haakjes
+    &6➢ &a/suffix [text] &7- &eVerander de tekst van je suffix
+    &6➢ &a/suffix color [color] &7- &eVerander de kleur van je suffix
+    &6➢ &a/suffix reset &7- &eVerander je suffix terug naar de standaard
+  help-others: |
+    &6➢ &a/prefix [text] <name> &7- &eVerander de tekst van de prefix van iemand anders
+    &6➢ &a/prefix color [color] <name> &7- &eVerander de kleur van de prefix van iemand anders
+    &6➢ &a/prefix name [color] <name> &7- &eVerander de kleur van de naam van iemand anders
+    &6➢ &a/prefix list &7- &eLijst met alle beschikbare kleuren
+    &6➢ &a/prefix reset <name> &7- &eVerander de prefix van iemand anders terug naar de standaard kleur
+    &6➢ &a/prefix bracket [color] &7- &eVerander de kleur van de haakjes van iemand anders
+    &6➢ &a/suffix [text] <name> &7- &eVerander de tekst van de suffix van iemand anders
+    &6➢ &a/suffix color [color] <name> &7- &eVerander de kleur van de suffix van iemand anders
+    &6➢ &a/suffix reset <name> &7- &eVerander je suffix terug naar de standaard

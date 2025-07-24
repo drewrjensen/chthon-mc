@@ -1,0 +1,73 @@
+# +---------------------------------------------------------------------------------------------------------+
+# PrefiX is made by martijnpu
+# File generated in version v7.5
+# For the default values for each message check the documentation:
+# https://hangar.papermc.io/martijnpu/PrefiX/pages/Documentation/Languages
+# +---------------------------------------------------------------------------------------------------------+
+
+prefix: "&ePrefiX &3➢ "
+
+language: "English"
+messages:
+  header: "&6&m&l+-----------------&6&l= &ePrefiX &6&l=&6&m&l-----------------+&r"
+  footer: "&6&m&l+------------------------------------------+"
+  command:
+    unknown: "&cDid you mean '/%COMMAND% help'?"
+    usage: "&cPlease usage '%COMMAND%'"
+    reload: "&6Successfully reloaded the config"
+    reset: "&6Reset %TYPE%"
+    changed: "&6Changed %TYPE% to &r%TAG%"
+    removed: "&6Removed %TYPE%"
+    reset-other: "&6Reset the %TYPE% of %NAME%"
+    changed-other: "&6Changed the %TYPE% of %NAME%"
+    removed-other: "&6Removed the %TYPE% of %NAME%"
+  color:
+    apply: "&6Changed %TYPE% color to %COLOR%"
+    reset: "&6Reset %TYPE% color"
+    target: "&6Changing the %TYPE% color of %NAME%"
+    invalid: "&cInvalid color. Pick a color from '/prefix list'"
+  list:
+    apply: "&aClick to apply this to your %TYPE%"
+    no-perm: "&cNo permission to use this for your %TYPE%"
+    template-header: "&7&lTemplates:"
+  updater:
+    force: "&cYou are already running a newer version than available. Use '&fforce&c' to update anyway"
+    success: "&aSuccessfully downloaded the latest PrefiX version. Restart your server to apply"
+  error:
+    player: "&cPlayer '&6%NAME%&c' doesn't exists! (or is offline)"
+    command: "&cAn error occur while executing this command. Please check the console for more info"
+    need-target: "&cYou must target a player to execute this command!"
+    blacklist: "&cYou've used a blacklisted word"
+    length: "&cYou can not have more than %SIZE% characters"
+    length-colorcode: "&cYou can not have more than %SIZE% characters excluding color codes!"
+    character: "&cYou've used a wrong character!"
+    colorcode: "&cYou can't use color codes!"
+    hexadecimal: "&cHexadecimal format is disabled!"
+    bracket: "&cBrackets are disabled by the administrator"
+    permission:
+      command: "&cYou don't have permission to execute this command"
+      color: "&cYou are not allowed to use this color"
+      target: "&cYou are not allowed to target others"
+    template:
+      disabled: "&cTemplates are disabled by the administrator"
+      unknown: "&cTemplate '%TEMPLATE%' does not exist"
+  help: |
+    &6➢ &a/prefix [text] &7- &eChange the text of your prefix
+    &6➢ &a/prefix color [color] &7- &eChange the color of your prefix
+    &6➢ &a/prefix name [color] &7- &eChange the color of your name
+    &6➢ &a/prefix list &7- &eList of all available colors
+    &6➢ &a/prefix reset &7- &eSet your prefix to the default value
+    &6➢ &a/prefix bracket [color] &7- &eChange the color of your bracket
+    &6➢ &a/suffix [text] &7- &eChange the text of your suffix
+    &6➢ &a/suffix color [color] &7- &eChange the color of your suffix
+    &6➢ &a/suffix reset &7- &eSet your suffix to the default value
+  help-others: |
+    &6➢ &a/prefix [text] <name> &7- &eChange the text of someone else's prefix
+    &6➢ &a/prefix color [color] <name> &7- &eChange the color of someone else's prefix
+    &6➢ &a/prefix name [color] <name> &7- &eChange the color of someone else's name
+    &6➢ &a/prefix list &7- &eList of all available colors
+    &6➢ &a/prefix reset <name> &7- &eSet someone else's prefix to the default value
+    &6➢ &a/prefix bracket [color] &7- &eChange the color of someone else's bracket
+    &6➢ &a/suffix [text] <name> &7- &eChange the text of someone else's suffix
+    &6➢ &a/suffix color [color] <name> &7- &eChange the color of someone else's suffix
+    &6➢ &a/suffix reset <name> &7- &eSet someone else's suffix to the default value

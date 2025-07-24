@@ -1,0 +1,94 @@
+# +---------------------------------------------------------------------------------------------------------+
+# Prefix is made by martijnpu
+# File generated in version v7.5
+# For the descriptions for each setting check the documentation:
+# https://hangar.papermc.io/martijnpu/PrefiX/pages/Documentation/Config
+# +---------------------------------------------------------------------------------------------------------+
+
+# Automatically download the latest version when available
+auto-update: false
+
+prefix:
+  # Set the maximum length of the Prefix WITHOUT color characters
+  max-length: 16
+
+  # Set the characters before and after the prefix
+  # For example if you want the following ingame: "[Admin] martijnpu"
+  # You can include color codes here (&.) or can be left blank ("")
+  start-character: "["
+  end-character: "]"
+
+  bracket:
+    # Define here the option to let people change their bracket color separately
+    # If disabled brackets will always have the same color as the prefix
+    enable: false
+
+    # Define here the color the start-character and end-character should be when a player has a custom Prefix
+    # You can include color codes here (&.) or can be left blank ("")
+    # If this value other than blanked, custom brackets functionality will be disabled
+    change-color: ""
+
+suffix:
+  # Set the maximum length of the suffix WITHOUT color characters
+  max-length: 8
+
+  # Set the characters before and after the suffix
+  # You can include color codes here (&.) or can be left blank ("")
+  start-character: "<"
+  end-character: ">"
+
+general:
+  # Define the language of the plugin.
+  # Currently available: "en_US" (English), "nl_NL" (Dutch), "es_ES" (Spanish) "uk_UA" (Ukrainian), "zh_CN" (Chinese Simplified), "pl_PL" (Polish) and "ru" (Russian)
+  # Want to add your translation to PrefiX? Contact the developer
+  language: "en_US"
+
+  hexadecimal:
+    # Set whether hexadecimal format is supported in all commands
+    enabled: false
+
+    # Define here the hexadecimal format the other plugins are using ({#rrggbb}, &#rrggbb)
+    format: "&#rrggbb"
+
+    # Enable gradient support. This will allow you to use <> as defined in CMI
+    # With bracket functionality disabled the brackets will be included in the gradient
+    gradient: false
+
+    # Allow hexadecimal color for names
+    # Only enable if your chat/tab plugin supports this
+    hex-names: false
+
+  # Hide warning messages to normal players
+  # The console and players with 'prefix.admin' will still always receive it
+  hide-warnings: false
+
+  # Keep the current context of the tag
+  # This option needs LuckPerms version v5.4.xx at least to work
+  keep-context: false
+
+  # Define here the characters or patterns you want to allow
+  # Check for the full list of patterns: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html
+  whitelist:
+    - "\\w" #Alphabetic characters
+    - "\\p{Punct}" #Punctuation characters
+    - " " #Spaces
+  #  - "\\p{inCJKUnifiedIdeographs}" #Chinese characters
+  #  - "\\p{IsAlphabetic}" #Russian and other languages
+  #  - "%@♡€" # Allow specific symbols
+
+  # Here you can specify any characters or words that will be blocked
+  # Blacklist is NOT Case Sensitive
+  blacklist:
+    - "fuck"
+    - "admin"
+    - "owner"
+    - "" # Blacklist empty tags
+
+# In this section you can define your own prefix templates players can choose between
+templates:
+  # Enable the template functionality and corresponding commands
+  enabled: false
+
+  # The name of the template is used as permission (prefix.template.<name>)
+  list:
+    example: "&a[&bTemplateExample&a] "

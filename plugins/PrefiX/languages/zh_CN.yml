@@ -1,0 +1,74 @@
+# +---------------------------------------------------------------------------------------------------------+
+# PrefiX is made by martijnpu
+# File generated in version v7.5
+# For the default values for each message check the documentation:
+# https://hangar.papermc.io/martijnpu/PrefiX/pages/Documentation/Languages
+# Translated by @unkown7648
+# +---------------------------------------------------------------------------------------------------------+
+
+prefix: "&ePrefiX &3➢ "
+
+language: "English"
+messages:
+  header: "&6&m&l+-----------------&6&l= &ePrefiX &6&l=&6&m&l-----------------+&r"
+  footer: "&6&m&l+------------------------------------------+"
+  command:
+    unknown: "&c你是不是想输入 '/%COMMAND% help'?"
+    usage: "&c请使用 '%COMMAND%'"
+    reload: "&6成功重新加载配置文件"
+    reset: "&6重置 %TYPE%"
+    changed: "&6将 %TYPE% 更改为 &r%TAG%"
+    removed: "&6移除 %TYPE%"
+    reset-other: "&6重置 %NAME% 的 %TYPE%"
+    changed-other: "&6更改 %NAME% 的 %TYPE%"
+    removed-other: "&6移除 %NAME% 的 %TYPE%"
+  color:
+    apply: "&6将 %TYPE% 的颜色更改为 %COLOR%"
+    reset: "&6重置 %TYPE% 的颜色"
+    target: "&6正在更改 %NAME% 的 %TYPE% 颜色"
+    invalid: "&c无效的颜色。请从 '/prefix list' 中选择一个颜色"
+  list:
+    apply: "&a点击应用到你的 %TYPE%"
+    no-perm: "&c没有权限在你的 %TYPE% 上使用此功能"
+    template-header: "&7&l模板:"
+  updater:
+    force: "&c您已经运行了比可用的更新版本。无论如何，都使用'&fforce&c'更新"
+    success: "&a成功下载了最新的PrefiX版本。重新启动您的服务器以应用"
+  error:
+    player: "&c玩家 '&6%NAME%&c' 不存在！（或离线）"
+    command: "&c执行此命令时出现错误。请查看控制台获取更多信息"
+    need-target: "&c你必须选择一个玩家来执行此命令！"
+    blacklist: "&c你使用了一个被禁用的词语"
+    length: "&c字符数不能超过 %SIZE% 个"
+    length-colorcode: "&c字符数不能超过 %SIZE% 个（不包括颜色代码）"
+    character: "&c你使用了一个非法字符！"
+    colorcode: "&c不能使用颜色代码！"
+    hexadecimal: "&c禁用了十六进制格式！"
+    bracket: "&c括号被管理员禁用"
+    permission:
+      command: "&c你没有执行此命令的权限"
+      color: "&c你没有使用此颜色的权限"
+      target: "&c你没有以他人为目标的权限"
+    template:
+      disabled: "&c模板被管理员禁用"
+      unknown: "&c模板 '%TEMPLATE%' 不存在"
+  help: |
+    &6➢ &a/prefix [text] &7- &e更改你的前缀文本
+    &6➢ &a/prefix color [color] &7- &e更改你的前缀颜色
+    &6➢ &a/prefix name [color] &7- &e更改你的名字颜色
+    &6➢ &a/prefix list &7- &e查看所有可用的颜色
+    &6➢ &a/prefix reset &7- &e将你的前缀重置为默认值
+    &6➢ &a/prefix bracket [color] &7- &e更改你的括号颜色
+    &6➢ &a/suffix [text] &7- &e更改你的后缀文本
+    &6➢ &a/suffix color [color] &7- &e更改你的后缀颜色
+    &6➢ &a/suffix reset &7- &e将你的后缀重置为默认值
+  help-others: |
+    &6➢ &a/prefix [text] <name> &7- &e更改其他玩家的前缀文本
+    &6➢ &a/prefix color [color] <name> &7- &e更改其他玩家的前缀颜色
+    &6➢ &a/prefix name [color] <name> &7- &e更改其他玩家的名字颜色
+    &6➢ &a/prefix list &7- &e查看所有可用的颜色
+    &6➢ &a/prefix reset <name> &7- &e将其他玩家的前缀重置为默认值
+    &6➢ &a/prefix bracket [color] &7- &e更改其他玩家的括号颜色
+    &6➢ &a/suffix [text] <name> &7- &e更改其他玩家的后缀文本
+    &6➢ &a/suffix color [color] <name> &7- &e更改其他玩家的后缀颜色
+    &6➢ &a/suffix reset <name> &7- &e将其他玩家的后缀重置为默认值

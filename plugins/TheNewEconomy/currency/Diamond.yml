@@ -1,0 +1,52 @@
+config-version: 2
+
+Info:
+  Server: Main Server
+  Identifier: Diamond
+  UUIDAsId: false
+  Icon: DIAMOND
+  Major_Single: Diamond
+  Major_Plural: Diamonds
+  Minor_Single: Shard
+  Minor_Plural: Shards
+  Symbol: ♦
+  UUID: 86b2e602-79fa-4903-8da7-e6852012cf81
+
+Options:
+  MultiRegion:
+    Regions:
+      world:
+        Default: true
+  Global:
+    Enabled: true
+    Default: true
+  Disabled: false
+  Sync: true
+  MaxBalance: 900000000000000000000000000000000000000000000
+  Balance: 0.0
+  Decimal: .
+  DecimalPlaces: 2
+  Type: mixed
+  Minor_Weight: 20 # 20 shards = 1 diamond
+
+Item:
+  EnderChest: true
+  EnderFill: true
+  ImportItems: true
+
+Formatting:
+  Format: ♦<major.amount><decimal><minor.amount>
+  Major: true
+  Minor: true
+  Major_Prefix: ♦
+  Minor_Prefix: ''
+  Major_Suffix: ''
+  Minor_Suffix: ''
+  Major_Symbol: ♦
+  Minor_Symbol: ''
+  Major_Separate: true
+  Major_Separator: ','
+  Minor_Separator: ''
+  Prefixes: kMGTPEZYXWVUN₮
+  JPrefixes: 万億兆京垓𥝱穣溝澗正載
+  Balance: true

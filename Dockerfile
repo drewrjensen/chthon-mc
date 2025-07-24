@@ -1,21 +1,24 @@
-# FROM ghcr.io/drewrjensen/paper-srv:${VERSION}
-FROM ghcr.io/drewrjensen/paper-srv:f54476c
+FROM eclipse-temurin:21-jdk-alpine
+
+ARG PAPERMC_VERSION=1.21.7
+ARG PAPERMC_BUILD=32
 
 EXPOSE 8080
-EXPOSE 19132
-EXPOSE 19133
-EXPOSE 24454
-EXPOSE 25565
+EXPOSE 19132/udp
+EXPOSE 19133/udp
+EXPOSE 24454/udp
+EXPOSE 25565/tcp
+EXPOSE 25565/udp
 
 VOLUME ["/srv/papermc/worlds"]
 
-RUN mkdir -p /srv/papermc
 WORKDIR /srv/papermc
-RUN mkdir -p config
-COPY conf .
-RUN mkdir -p plugins
+
+RUN apk add --no-cache bash screen curl
+
+COPY datapacks/ /srv/papermc/worlds/Chthon/datapacks/
 COPY plugins/ plugins/
-RUN mkdir -p /srv/papermc/worlds/Chthon/datapacks
-COPY datapacks/ /srv/papermc/worlds/Chthon/datapacks
-COPY start.sh .
+COPY root .
+COPY --chmod=0755 start.sh .
+
 ENTRYPOINT ["bash", "./start.sh"]

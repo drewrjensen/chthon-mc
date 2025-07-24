@@ -1,0 +1,13 @@
+Info:
+  ID: d8a70112-b126-3164-b0a6-ac91ea054bb3
+  Name: Server_Account
+  Type: non-player
+  Status: normal
+  CreationDate: 1751522390475
+  Pin: ''
+  Owner: d8a70112-b126-3164-b0a6-ac91ea054bb3
+Holdings:
+  Main Server:
+    Chthon:
+      48313f97-f3b0-4442-a668-69445c125173:
+        tne:VIRTUAL_HOLDINGS: '500'

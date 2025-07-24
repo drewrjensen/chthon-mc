@@ -239,6 +239,7 @@ World_aliases:
     # Automatically generated, if regex matches world will not be added here.
     List:
         world: world
+        Chthon: "Chthon"
     # List of - "alias:regex" rules, Set alias of multiple worlds that match regex to group them
     Regex:
       - "Alias for world:^abc$"
@@ -273,9 +274,29 @@ Plugins:
     Buycraft:
         # https://docs.tebex.io/store/faq#how-can-i-find-my-secret-key
         Secret: '-'
+    Economy (Vault):
+        Enabled: true
+    Essentials:
+        Enabled: true
+    EssentialsEco:
+        Enabled: true
     Factions:
         HideFactions:
           - ExampleFaction
+    Floodgate:
+        Enabled: true
+    LuckPerms:
+        Enabled: true
+    Permission Groups (Vault):
+        Enabled: true
+    PlaceholderAPI:
+        Load_these_placeholders_on_join:
+          - "%plan_server_uuid%"
+        Tracked_player_placeholders:
+          - "%example_placeholder%"
+        Skip_storing_invalid_placeholder_values:
+          - "Missing player info"
+        Enabled: true
     Towny:
         HideTowns:
           - ExampleTown

@@ -1,0 +1,74 @@
+# +---------------------------------------------------------------------------------------------------------+
+# PrefiX está hecho por martijnpu
+# Archivo generado en la versión v7.5
+# Para los valores predeterminados de cada mensaje, consulte la documentación:
+# https://hangar.papermc.io/martijnpu/PrefiX/pages/Documentation/Languages
+# Traducido al español por @flamyamy
+# +---------------------------------------------------------------------------------------------------------+
+
+prefix: "&ePrefiX &3➢ "
+
+language: "Español"
+messages:
+  header: "&6&m&l+-----------------&6&l= &ePrefiX &6&l=&6&m&l-----------------+&r"
+  footer: "&6&m&l+------------------------------------------+"
+  command:
+    unknown: "&c¿Quisiste decir '/%COMMAND% ayuda'?"
+    usage: "&cPor favor, usa '%COMMAND%'"
+    reload: "&6Configuración recargada exitosamente"
+    reset: "&6Reiniciado %TYPE%"
+    changed: "&6%TYPE% cambiado a &r%TAG%"
+    removed: "&6Removido %TYPE%"
+    reset-other: "&6Reiniciado %TYPE% de %NAME%"
+    changed-other: "&6Cambiado %TYPE% de %NAME%"
+    removed-other: "&6Removido %TYPE% de %NAME%"
+  color:
+    apply: "&6Cambiado color de %TYPE% a %COLOR%"
+    reset: "&6Reiniciado color de %TYPE%"
+    target: "&6Cambiando color de %TYPE% de %NAME%"
+    invalid: "&cColor inválido. Escoge un color de '/prefix lista'"
+  list:
+    apply: "&aHaz clic para aplicar esto a tu %TYPE%"
+    no-perm: "&cNo tienes permiso para usar esto en tu %TYPE%"
+    template-header: "&7&lPlantillas:"
+  updater:
+    force: "&cYa está ejecutando una versión más nueva que la disponible. Usar '&fforce&c' para actualizar de todos modos"
+    success: "&aDescargó con éxito la última versión de PrefiX. Reinicie su servidor para aplicar"
+  error:
+    player: "&c¡El jugador '&6%NAME%&c' no existe! (o está desconectado)"
+    command: "&cOcurrió un error al ejecutar este comando. Por favor, revisa la consola para más información"
+    need-target: "&cDebes seleccionar un jugador para ejecutar este comando"
+    blacklist: "&cHas usado una palabra prohibida"
+    length: "&cNo puedes tener más de %SIZE% caracteres"
+    length-colorcode: "&cNo puedes tener más de %SIZE% caracteres excluyendo códigos de color"
+    character: "&cHas usado un carácter incorrecto"
+    colorcode: "&cNo puedes usar códigos de color"
+    hexadecimal: "&cEl formato hexadecimal está desactivado"
+    bracket: "&cLos corchetes están desactivados por el administrador"
+    permission:
+      command: "&cNo tienes permiso para ejecutar este comando"
+      color: "&cNo tienes permitido usar este color"
+      target: "&cNo tienes permitido apuntar a otros"
+    template:
+      disabled: "&cLas plantillas están desactivadas por el administrador"
+      unknown: "&cLa plantilla '%TEMPLATE%' no existe"
+  help: |
+    &6➢ &a/prefix [texto] &7- &eCambia el texto de tu prefijo
+    &6➢ &a/prefix color [color] &7- &eCambia el color de tu prefijo
+    &6➢ &a/prefix name [color] &7- &eCambia el color de tu nombre
+    &6➢ &a/prefix lista &7- &eLista de todos los colores disponibles
+    &6➢ &a/prefix reiniciar &7- &eEstablece tu prefijo al valor predeterminado
+    &6➢ &a/prefix corchete [color] &7- &eCambia el color de tu corchete
+    &6➢ &a/suffix [texto] &7- &eCambia el texto de tu sufijo
+    &6➢ &a/suffix color [color] &7- &eCambia el color de tu sufijo
+    &6➢ &a/suffix reiniciar &7- &eEstablece tu sufijo al valor predeterminado
+  help-others: |
+    &6➢ &a/prefix [texto] <nombre> &7- &eCambia el texto del prefijo de otra persona
+    &6➢ &a/prefix color [color] <nombre> &7- &eCambia el color del prefijo de otra persona
+    &6➢ &a/prefix name [color] <nombre> &7- &eCambia el color del nombre de otra persona
+    &6➢ &a/prefix lista &7- &eLista de todos los colores disponibles
+    &6➢ &a/prefix reiniciar <nombre> &7- &eEstablece el prefijo de otra persona al valor predeterminado
+    &6➢ &a/prefix corchete [color] &7- &eCambia el color del corchete de otra persona
+    &6➢ &a/suffix [texto] <nombre> &7- &eCambia el texto del sufijo de otra persona
+    &6➢ &a/suffix color [color] <nombre> &7- &eCambia el color del sufijo de otra persona
+    &6➢ &a/suffix reiniciar <nombre> &7- &eEstablece el sufijo de otra persona al valor predeterminado

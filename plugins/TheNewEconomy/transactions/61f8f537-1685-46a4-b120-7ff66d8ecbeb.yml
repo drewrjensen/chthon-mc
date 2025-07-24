@@ -1,0 +1,42 @@
+id: 61f8f537-1685-46a4-b120-7ff66d8ecbeb
+time: 1751567221298
+type: deposit
+source:
+  type: player
+  name: c8729b45-2363-4e12-8646-f7e0ba93a561
+archive: false
+voided: false
+from:
+  id: c8729b45-2363-4e12-8646-f7e0ba93a561
+  tax: '0'
+  starting:
+    Chthon:
+      86b2e602-79fa-4903-8da7-e6852012cf81:
+        tne:INVENTORY_HOLDINGS: '170.0'
+        tne:ENDER_HOLDINGS: '0'
+  ending:
+    Chthon:
+      86b2e602-79fa-4903-8da7-e6852012cf81:
+        tne:INVENTORY_HOLDINGS: '0.0'
+        tne:ENDER_HOLDINGS: '0'
+  modifier:
+    region: Chthon
+    currency: 86b2e602-79fa-4903-8da7-e6852012cf81
+    modifier: '-170'
+    operation: ADD
+to:
+  id: c8729b45-2363-4e12-8646-f7e0ba93a561
+  tax: '0'
+  starting:
+    Chthon:
+      86b2e602-79fa-4903-8da7-e6852012cf81:
+        tne:VIRTUAL_HOLDINGS: '0'
+  ending:
+    Chthon:
+      86b2e602-79fa-4903-8da7-e6852012cf81:
+        tne:VIRTUAL_HOLDINGS: '170'
+  modifier:
+    region: Chthon
+    currency: 86b2e602-79fa-4903-8da7-e6852012cf81
+    modifier: '170'
+    operation: ADD

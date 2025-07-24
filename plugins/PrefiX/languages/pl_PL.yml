@@ -1,0 +1,74 @@
+# +---------------------------------------------------------------------------------------------------------+
+# PrefiX is made by martijnpu
+# File generated in version v7.5
+# For the default values for each message check the documentation:
+# https://hangar.papermc.io/martijnpu/PrefiX/pages/Documentation/Languages
+# Przetłumaczone na polecenie przez @kaczuszka222
+# +---------------------------------------------------------------------------------------------------------+
+
+prefix: "&ePrefiX &3➢ "
+
+language: "Polski"
+messages:
+  header: "&6&m&l+-----------------&6&l= &ePrefiX &6&l=&6&m&l-----------------+&r"
+  footer: "&6&m&l+------------------------------------------+"
+  command:
+    unknown: "&cMiałeś na myśli '/%COMMAND% help'?"
+    usage: "&cProszę o użycie '%COMMAND%'"
+    reload: "&6Pomyślnie przeładowano konfigurację"
+    reset: "&6Reset %TYPE%"
+    changed: "&6Zmieniono %TYPE% na &r%TAG%"
+    removed: "&6Usunięto %TYPE%"
+    reset-other: "&6Zresetuj %TYPE% z %NAME%"
+    changed-other: "&6Zmieniono %TYPE% z %NAME%"
+    removed-other: "&6Usunięto %TYPE% z %NAME%"
+  color:
+    apply: "&6Zmieniono %TYPE% kolor na %COLOR%"
+    reset: "&6Zresetowano %TYPE% kolor"
+    target: "&6Zmienianie %TYPE% kolor z %NAME%"
+    invalid: "&cNieprawidłowy kolor. Wybierz kolor z '/prefix list'"
+  list:
+    apply: "&aKliknij, aby zastosować to do swojego %TYPE%"
+    no-perm: "&cBrak uprawnień do wykorzystania tego dla Twojego %TYPE%"
+    template-header: "&7&lSzablony:"
+  updater:
+    force: "&cUruchamiasz już nowszą wersję niż dostępna. I tak użyj '&fforce&c', aby aktualizować"
+    success: "&aPomyślnie pobrał najnowszą wersję PrefiX. Uruchom ponownie serwer, aby zastosować"
+  error:
+    player: "&cGracz '&6%NAME%&c' nie istnieje! (albo jest offline)"
+    command: "&cWystąpił błąd podczas wykonywania tego polecenia. Sprawdź konsolę, aby uzyskać więcej informacji"
+    need-target: "&cAby wykonać to polecenie, musisz wskazać gracza!"
+    blacklist: "&cUżyłeś słowa znajdującego się na czarnej liście"
+    length: "&cNie możesz mieć więcej niż %SIZE% słów"
+    length-colorcode: "&cNie możesz mieć więcej niż %SIZE% znaki z wyłączeniem kodów kolorów!"
+    character: "&cUżyłeś złego znaku!"
+    colorcode: "&cNie można używać kodów kolorów!"
+    hexadecimal: "&cFormat szesnastkowy jest wyłączony!"
+    bracket: "&cAdministrator wyłączył nawiasy"
+    permission:
+      command: "&cNie masz uprawnień do wykonania tej komendy"
+      color: "&cNie masz uprawnień do używania tego koloru"
+      target: "&cNie masz prawa atakować innych"
+    template:
+      disabled: "&cSzablony są wyłączone przez administratora"
+      unknown: "&cSzablon '%TEMPLATE%' nie istnieje"
+  help: |
+    &6➢ &a/prefix [tekst] &7- &eZmień tekst swojego prefiksu
+    &6➢ &a/prefix color [kolor] &7- &eZmień kolor swojego prefiksu
+    &6➢ &a/prefix name [kolor] &7- &eZmień kolor swojego imienia
+    &6➢ &a/prefix list &7- &eLista wszystkich dostępnych kolorów
+    &6➢ &a/prefix reset &7- &eUstaw swój prefiks na wartość domyślną
+    &6➢ &a/prefix bracket [kolor] &7- &eZmień kolor swojego uchwytu
+    &6➢ &a/suffix [tekst] &7- &eZmień tekst swojego sufiksu
+    &6➢ &a/suffix color [kolor] &7- &eZmień kolor swojego sufiksu
+    &6➢ &a/suffix reset &7- &eUstaw swój sufiks na wartość domyślną
+  help-others: |
+    &6➢ &a/prefix [tekst] <nazwa> &7- &eZmień tekst czyjegoś prefiksu
+    &6➢ &a/prefix color [kolor] <nazwa> &7- &eZmień kolor prefiksu innej osoby
+    &6➢ &a/prefix name [kolor] <nazwa> &7- &eZmień kolor czyjegoś imienia
+    &6➢ &a/prefix list &7- &eLista wszystkich dostępnych kolorów
+    &6➢ &a/prefix reset <nazwa> &7- &eUstaw prefiks innej osoby na wartość domyślną
+    &6➢ &a/prefix bracket [kolor] &7- &eZmień kolor nawiasu innej osoby
+    &6➢ &a/suffix [tekst] <nazwa> &7- &eZmień tekst sufiksu innej osoby
+    &6➢ &a/suffix color [kolor] <nazwa> &7- &eZmień kolor sufiksu innej osoby
+    &6➢ &a/suffix reset <nazwa> &7- &eUstaw sufiks innej osoby na wartość domyślną
