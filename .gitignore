@@ -5,6 +5,7 @@
 *.jar
 *.log
 *.rar
+*.sqlite
 *.tar
 *.tgz
 *.tmp
