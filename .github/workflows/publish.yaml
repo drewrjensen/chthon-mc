@@ -33,6 +33,8 @@ jobs:
           echo "PAPERMC_BUILD=$PAPERMC_BUILD" >> $GITHUB_ENV
           echo "PAPERMC_VERSION=$PAPERMC_VERSION" >> $GITHUB_OUTPUT
           echo "PAPERMC_BUILD=$PAPERMC_BUILD" >> $GITHUB_OUTPUT
+          echo "MC_VERSION=$MC_VERSION" >> $GITHUB_ENV
+          echo "CMC_VERSION=$CMC_VERSION" >> $GITHUB_ENV
 
       - name: Set dynamic env from version step
         run: echo "ENV READY"
@@ -86,6 +88,11 @@ jobs:
       - name: Install jq
         run: sudo apt-get install -y jq
 
+      - name: Render chthon-mc.yaml with envsubst
+        run: |
+          mkdir -p k8s
+          envsubst < chthon-mc.yaml > k8s/chthon-mc.yaml
+
       - name: Create GitHub Release
         id: create_release
         env:
@@ -103,6 +110,6 @@ jobs:
       - name: Upload release assets
         run: |
           TAG="v${{ steps.version.outputs.version }}"
-          gh release upload "$TAG" compose.yaml .env k8s/* --repo "${{ github.repository }}"
+          gh release upload "$TAG" compose.yaml .env k8s/chthon-mc.yaml --repo "${{ github.repository }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

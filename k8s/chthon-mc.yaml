@@ -14,8 +14,8 @@ kind: ConfigMap
 metadata:
   name: chthon-mc-env
 data:
-  MC_VERSION: "1.21.7"
-  CMC_VERSION: "1"
+  MC_VERSION: "${MC_VERSION}"
+  CMC_VERSION: "${CMC_VERSION}"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -37,7 +37,7 @@ spec:
         - name: ghcr-secret
       containers:
         - name: minecraft
-          image: ghcr.io/drewrjensen/chthon-mc:1.21.7-1
+          image: ghcr.io/drewrjensen/chthon-mc:${MC_VERSION}-${CMC_VERSION}
           ports:
             - containerPort: 8080 # Dynmap
             - containerPort: 8804 # Plan
