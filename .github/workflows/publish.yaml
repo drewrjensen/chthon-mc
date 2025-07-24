@@ -95,7 +95,7 @@ jobs:
 
       - name: Upload release assets
         run: |
-          for file in chthon-mc-compose.yml .env; do
+          for file in compose.yaml .env; do
             curl -L -X POST \
               -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
               -H "Content-Type: application/octet-stream" \
