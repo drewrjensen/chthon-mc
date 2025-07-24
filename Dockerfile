@@ -16,7 +16,6 @@ WORKDIR /srv/papermc
 
 RUN apk add --no-cache bash screen curl
 
-COPY datapacks/ /srv/papermc/worlds/Chthon/datapacks/
 COPY plugins/ plugins/
 COPY root .
 COPY --chmod=0755 start.sh .
