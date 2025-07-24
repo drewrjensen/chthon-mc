@@ -80,18 +80,15 @@ jobs:
         id: create_release
         run: |
           VERSION=${{ steps.version.outputs.version }}
-          echo "Creating release for tag v${VERSION}"
-          RESPONSE=$(curl -s -X POST \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            -d '{"tag_name": "'"v${VERSION}"'", "name": "'"v${VERSION}"'", "body": "Release for version ${VERSION}"}' \
-            https://api.github.com/repos/${{ github.repository }}/releases)
-          if echo "$RESPONSE" | grep -q "Validation Failed"; then
-            echo "Error: Failed to create release"
-            echo "$RESPONSE"
-            exit 1
-          fi
-          RELEASE_ID=$(echo "$RESPONSE" | jq -r .id)
-          echo "release_id=$RELEASE_ID" >> $GITHUB_OUTPUT
+          TAG="v$VERSION"
+
+          echo "Creating GitHub release for $TAG"
+
+          gh release create "$TAG" \
+            --title "$TAG" \
+            --notes "Release for version $VERSION" \
+            --repo "${{ github.repository }}" \
+            --verify-tag
 
       - name: Upload release assets
         run: |
