@@ -88,10 +88,15 @@ jobs:
       - name: Install jq
         run: sudo apt-get install -y jq
 
-      - name: Render chthon-mc.yaml with envsubst
+      - name: Replace variables in k8s/chthon-mc.yaml
         run: |
-          mkdir -p k8s
-          envsubst < k8s/chthon-mc.yaml > k8s/chthon-mc.yaml
+          sed -i "s|\${MC_VERSION}|${MC_VERSION}|g" k8s/chthon-mc.yaml
+          sed -i "s|\${CMC_VERSION}|${CMC_VERSION}|g" k8s/chthon-mc.yaml
+
+      - name: Verify rendered YAML
+        run: |
+          echo "--- k8s/chthon-mc.yaml ---"
+          cat k8s/chthon-mc.yaml
 
       - name: Create GitHub Release
         id: create_release
