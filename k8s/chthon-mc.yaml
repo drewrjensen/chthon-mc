@@ -31,10 +31,8 @@ spec:
           ports:
             - containerPort: 8080
               protocol: TCP
-              hostPort: 8080
             - containerPort: 8804
               protocol: TCP
-              hostPort: 8804
             - containerPort: 19132
               protocol: UDP
               hostPort: 19132
