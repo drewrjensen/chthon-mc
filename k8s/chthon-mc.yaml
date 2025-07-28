@@ -22,18 +22,29 @@ spec:
     spec:
       nodeSelector:
         kubernetes.io/hostname: chthon-srv-0
-      imagePullSecrets:
-        - name: ghcr-secret
+      hostNetwork: false
       containers:
         - name: minecraft
           image: ghcr.io/drewrjensen/chthon-mc:${MC_VERSION}-${CMC_VERSION}
           ports:
-            - containerPort: 8080 # Dynmap
-            - containerPort: 8804 # Plan
-            - containerPort: 19132 # Geyser UDP
-            - containerPort: 19133 # Geyser UDP
-            - containerPort: 24454 # MC Voice UDP
-            - containerPort: 25565 # Java Edition
+            - containerPort: 8080
+              protocol: TCP
+              hostPort: 8080
+            - containerPort: 8804
+              protocol: TCP
+              hostPort: 8804
+            - containerPort: 19132
+              protocol: UDP
+              hostPort: 19132
+            - containerPort: 19133
+              protocol: UDP
+              hostPort: 19133
+            - containerPort: 24454
+              protocol: UDP
+              hostPort: 24454
+            - containerPort: 25565
+              protocol: TCP
+              hostPort: 25565
           env:
             - name: JAVA_TOOL_OPTIONS
               value: "-Xms2G -Xmx8G"
@@ -55,36 +66,6 @@ spec:
           hostPath:
             path: /opt/minecraft/worlds
             type: DirectoryOrCreate
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: chthon-mc
-spec:
-  type: NodePort
-  selector:
-    app: chthon-mc
-  ports:
-    - name: geyser-udp-19132
-      port: 19132
-      targetPort: 19132
-      nodePort: 19132
-      protocol: UDP
-    - name: geyser-udp-19133
-      port: 19133
-      targetPort: 19133
-      nodePort: 19133
-      protocol: UDP
-    - name: mcvoice-udp-24454
-      port: 24454
-      targetPort: 24454
-      nodePort: 24454
-      protocol: UDP
-    - name: java
-      port: 25565
-      targetPort: 25565
-      nodePort: 25565
-      protocol: TCP
 ---
 apiVersion: v1
 kind: Service
