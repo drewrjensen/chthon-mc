@@ -23,6 +23,8 @@ spec:
       nodeSelector:
         kubernetes.io/hostname: chthon-srv-0
       hostNetwork: false
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: minecraft
           image: ghcr.io/drewrjensen/chthon-mc:${MC_VERSION}-${CMC_VERSION}
