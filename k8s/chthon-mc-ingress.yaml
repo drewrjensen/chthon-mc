@@ -4,15 +4,16 @@ metadata:
   name: chthon-mc-ingress
 spec:
   entryPoints:
+    - web
     - websecure
   routes:
-    - match: Host(`mc.chthon.xyz`)
-      kind: Rule
-      services:
-        - name: chthon-mc-web
-          port: 8080
     - match: Host(`mc.chthon.xyz`) && PathPrefix(`/stats`)
       kind: Rule
       services:
         - name: chthon-mc-web
           port: 8804
+    - match: Host(`mc.chthon.xyz`)
+      kind: Rule
+      services:
+        - name: chthon-mc-web
+          port: 8080

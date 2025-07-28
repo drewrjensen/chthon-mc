@@ -68,22 +68,22 @@ spec:
     - name: geyser-udp-19132
       port: 19132
       targetPort: 19132
-      nodePort: 30132
+      nodePort: 19132
       protocol: UDP
     - name: geyser-udp-19133
       port: 19133
       targetPort: 19133
-      nodePort: 30133
+      nodePort: 19133
       protocol: UDP
     - name: mcvoice-udp-24454
       port: 24454
       targetPort: 24454
-      nodePort: 30454
+      nodePort: 24454
       protocol: UDP
     - name: java
       port: 25565
       targetPort: 25565
-      nodePort: 30065
+      nodePort: 25565
       protocol: TCP
 ---
 apiVersion: v1
