@@ -1,0 +1,3 @@
+*.jar
+!plugins/*.jar
+!paper*.jar
