@@ -3,7 +3,7 @@
 # License: https://github.com/TheNewEconomy/EconomyCore/blob/main/license.md
 Core:
   
-  config-version: 6
+  config-version: '5'
   
   #Cracked Server? Set this to true. May cause data issues as spigot/paper UUIDs are unpredictable.
   #Do not change this unless you know what you're doing.
@@ -142,9 +142,6 @@ Core:
   #All configurations relating to the transaction system.
   Transactions:
     
-    #Should transactions be recorded?
-    Record: true
-    
     #The time format to use when displaying transaction history data.
     Format: M, d y
     
@@ -223,4 +220,4 @@ Core:
         #The tax may also be a percentage. For percent follow number by the % symbol, i.e 10%
         Rate: 0.0
   #Don't modify unless you know what you're doing.
-  ServerID: 34f43fd7-f6f9-4f9f-b36c-cac73b3ecf8d
+  ServerID: 9460b152-fa72-4a28-81a0-cb0dfbdb8210
