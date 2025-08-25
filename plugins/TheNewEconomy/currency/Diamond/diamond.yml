@@ -1,9 +1,0 @@
-config-version: 2
-Info:
-  Single: "Diamond"
-  Plural: "Diamonds"
-Options:
-  Weight: 20  # worth 1 full diamond (in minor units)
-  Material: "DIAMOND"
-  Crafting:
-    Enabled: false

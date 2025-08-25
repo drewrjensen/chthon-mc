@@ -1,9 +1,0 @@
-config-version: 2
-Info:
-  Single: "Shard Block"
-  Plural: "Shard Blocks"
-Options:
-  Weight: 4          # 1 block = 0.2 diamond (4 shards)
-  Material: "AMETHYST_BLOCK"
-  Crafting:
-    Enabled: false
