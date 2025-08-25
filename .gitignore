@@ -16,103 +16,132 @@ plugins/**             # ignore everything under plugins/
 !plugins/              # but keep traversing the directory
 !plugins/*.jar         # allow plugin jars directly under plugins/
 
+# .paper-remapped
 plugins/.paper-remapped/
 
+# AuraSkills
 !plugins/AuraSkills/**
+
+# bStats
 !plugins/bStats/**
-!plugins/CarbonChat/**
+
+# CarbonChat
+plugins/CarbonChat/**
+!plugins/CarbonChat/
+!plugins/CarbonChat/command-settings.conf
+!plugins/CarbonChat/config.conf
+
+# DeathChest
 !plugins/DeathChest/**
 
-# DHSupport: ignore all except config.yml
+# DHSupport
 plugins/DHSupport/**
 !plugins/DHSupport/
 !plugins/DHSupport/config.yml
 
+# Dynmap
 plugins/dynmap/
 
+# Essentials
 !plugins/Essentials/**
+
+# Floodgate
 !plugins/floodgate/**
 
-# Geyser-Spigot: ignore all except config.yml
+# Geyser-Spigot
 plugins/Geyser-Spigot/**
 !plugins/Geyser-Spigot/
 !plugins/Geyser-Spigot/config.yml
 
-# GeyserExtras: ignore all except config.yml
+# GeyserExtras
 plugins/GeyserExtras/**
 !plugins/GeyserExtras/
 !plugins/GeyserExtras/config.yml
 
-# GSit: ignore all except config.yml
+# GSit
 plugins/GSit/**
 !plugins/GSit/
 !plugins/GSit/config.yml
 
-# ImageFrame: ignore all except config.yml
+# ImageFrame
 plugins/ImageFrame/**
 !plugins/ImageFrame/
 !plugins/ImageFrame/config.yml
 
-# LuckPerms: ignore all except config.yml
+# LuckPerms
 plugins/LuckPerms/**
 !plugins/LuckPerms/
 !plugins/LuckPerms/config.yml
 
-# MiniMOTD: ignore all except listed configs
+# MiniMOTD
 plugins/MiniMOTD/**
 !plugins/MiniMOTD/
 !plugins/MiniMOTD/main.conf
 !plugins/MiniMOTD/plugin_settings.conf
 
+# SeeMore
 !plugins/SeeMore/**
+
+# PaperTweaks
 !plugins/PaperTweaks/**
+
+# PlaceholderAPI
 !plugins/PlaceholderAPI/**
 
-# Plan: ignore all except config.yml
+# Plan
 plugins/Plan/**
 !plugins/Plan/
 !plugins/Plan/config.yml
 
-# PrefiX: ignore all except config.yml
+# PrefiX
 plugins/PrefiX/**
 !plugins/PrefiX/
 !plugins/PrefiX/config.yml
 
-# QuickShop-Hikari: ignore all except config.yml
+# QuickShop-Hikari
 plugins/QuickShop-Hikari/**
 !plugins/QuickShop-Hikari/
 !plugins/QuickShop-Hikari/config.yml
 
-# SkinsRestorer: ignore all except config.yml
+# SkinsRestorer
 plugins/SkinsRestorer/**
 !plugins/SkinsRestorer/
 !plugins/SkinsRestorer/config.yml
 
-# Spark: ignore all except config.json
+# Spark
 plugins/spark/**
 !plugins/spark/
 !plugins/spark/config.json
 
+# update
 plugins/update/
 
+# Vault
 !plugins/Vault/**
+
+# ViaBackwards
 !plugins/ViaBackwards/**
+
+# ViaRewind
 !plugins/ViaVersion/**
+
+# VoiceChat
 !plugins/voicechat/**
 
-# WorldEdit: ignore all except config.yml
+# WorldEdit
 plugins/WorldEdit/**
 !plugins/WorldEdit/
 !plugins/WorldEdit/config.yml
 
+# WorldEditSelectionVisualizer
 !plugins/WorldEditSelectionVisualizer/**
 
-# WorldGuard: ignore all except config.yml
+# WorldGuard
 plugins/WorldGuard/**
 !plugins/WorldGuard/
 !plugins/WorldGuard/config.yml
 
-# WorldGuardRegionProtect: ignore all except config.yml
+# WorldGuardRegionProtect
 plugins/WorldGuardRegionProtect/**
 !plugins/WorldGuardRegionProtect/
 !plugins/WorldGuardRegionProtect/config.yml
