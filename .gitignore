@@ -1,6 +1,9 @@
+# ---- binaries ----
 *.jar
-!paper*.jar
+!paper*.jar            # allow Paper jars in repo root
+!plugins/*.jar         # allow plugin jars directly under plugins/
 
+# ---- editor & runtime ----
 .vscode/
 cache/
 Chthon/
@@ -9,55 +12,91 @@ Chthon_the_end/
 crash-reports/
 libraries/
 logs/
-plugins/
-!plugins/*.jar
 versions/
 
-plugins/.paper-remapped/
-!plugins/AuraSkills/
+# ---- plugins: default deny, then explicit allows ----
+plugins/**             # ignore everything under plugins/
+!plugins/              # but keep traversing the directory
 
-plugins/DHSupport/
+# allow entire plugin dirs
+!plugins/AuraSkills/**
+!plugins/bStats/**
+!plugins/CarbonChat/**
+!plugins/DeathChest/**
+!plugins/Essentials/**
+!plugins/floodgate/**
+!plugins/SeeMore/**
+!plugins/PaperTweaks/**
+!plugins/PlaceholderAPI/**
+!plugins/Vault/**
+!plugins/ViaBackwards/**
+!plugins/ViaVersion/**
+!plugins/voicechat/**
+!plugins/WorldEditSelectionVisualizer/**
+
+# dirs allowed only for a specific file (include dir first, then file)
+!plugins/DHSupport/
 !plugins/DHSupport/config.yml
-plugins/dynmap/
-!plugins/dynmap/configuration.txt
-!plugins/Essentials/
-!plugins/floodgate/
-plugins/Geyser-Spigot/
+
+!plugins/Geyser-Spigot/
 !plugins/Geyser-Spigot/config.yml
-plugins/GeyserExtras/
+
+!plugins/GeyserExtras/
 !plugins/GeyserExtras/config.yml
-plugins/GSit/
+
+!plugins/GSit/
 !plugins/GSit/config.yml
-plugins/ImageFrame/
+
+!plugins/ImageFrame/
 !plugins/ImageFrame/config.yml
-plugins/LuckPerms/
+
+!plugins/LuckPerms/
 !plugins/LuckPerms/config.yml
-plugins/MiniMOTD/
+
+!plugins/MiniMOTD/
 !plugins/MiniMOTD/main.conf
 !plugins/MiniMOTD/plugin_settings.conf
-!plugins/PaperTweaks/
-!plugins/PlaceholderAPI/
-plugins/Plan/
+
+!plugins/Plan/
 !plugins/Plan/config.yml
-plugins/PrefiX/
+
+!plugins/PrefiX/
 !plugins/PrefiX/config.yml
-plugins/QuickShop-Hikari/
+
+!plugins/QuickShop-Hikari/
 !plugins/QuickShop-Hikari/config.yml
-!plugins/SeeMore/
-plugins/SkilnsRestorer/
+
+!plugins/SkilnsRestorer/
 !plugins/SkilnsRestorer/config.yml
-plugins/spark/
+
+!plugins/spark/
 !plugins/spark/config.json
-!plugins/TheNewEconomy/
-plugins/update/
-!plugins/Vault/config.yml
-!plugins/ViaBackwards/
-!plugins/ViaVersion/
-!plugins/voicechat/
-plugins/WorldEdit/
+
+!plugins/WorldEdit/
 !plugins/WorldEdit/config.yml
-!plugins/WorldEditSelectionVisualizer/
-plugins/WorldGuard/
+
+!plugins/WorldGuard/
 !plugins/WorldGuard/config.yml
-plugins/WorldGuardRegionProtect/
+
+!plugins/WorldGuardRegionProtect/
 !plugins/WorldGuardRegionProtect/config.yml
+
+# explicit ignores that should stay ignored
+plugins/.paper-remapped/
+plugins/DHSupport/*~
+plugins/dynmap/
+plugins/Geyser-Spigot/*~
+plugins/GeyserExtras/*~
+plugins/GSit/*~
+plugins/ImageFrame/*~
+plugins/LuckPerms/*~
+plugins/MiniMOTD/*~
+plugins/Plan/*~
+plugins/PrefiX/*~
+plugins/QuickShop-Hikari/*~
+plugins/SkilnsRestorer/*~
+plugins/spark/*~
+plugins/WorldEdit/*~
+plugins/WorldGuard/*~
+plugins/WorldGuardRegionProtect/*~
+plugins/update/
