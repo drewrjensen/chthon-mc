@@ -1,0 +1,9 @@
+config-version: 2
+Info:
+  Single: "Shard"
+  Plural: "Shards"
+Options:
+  Weight: 1          # 1 shard = 0.05 diamond (minor units)
+  Material: "AMETHYST_SHARD"
+  Crafting:
+    Enabled: false

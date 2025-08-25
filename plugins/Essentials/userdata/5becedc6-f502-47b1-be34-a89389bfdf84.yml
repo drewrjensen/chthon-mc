@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 161.28.242.128
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1755193743931
+  login: 1755193582853
+money: '0'
+last-account-name: Gingikinz
+lastlocation:
+  world: 589d8bf9-1b5c-4cd1-a568-92f6f1e2bbf2
+  world-name: Chthon
+  x: 421.5
+  y: 118.0
+  z: -270.5
+  yaw: 0.0
+  pitch: 0.0
+logoutlocation:
+  world: 589d8bf9-1b5c-4cd1-a568-92f6f1e2bbf2
+  world-name: Chthon
+  x: 341.6226809910633
+  y: 104.0
+  z: -278.69999998807907
+  yaw: 78.15032196044922
+  pitch: 18.600065231323242

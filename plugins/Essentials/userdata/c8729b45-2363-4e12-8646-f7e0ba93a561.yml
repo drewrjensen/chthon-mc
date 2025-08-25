@@ -1,0 +1,47 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 161.28.213.21
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1755449929661
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1755724892165
+  login: 1755724757150
+money: '0'
+last-account-name: SabbaticGoatee
+lastlocation:
+  world: 1b293e97-c7a3-40e6-a11d-8a86a01c6262
+  world-name: world
+  x: 121.79865304159689
+  y: 121.86801754316751
+  z: 110.46734213941863
+  yaw: 32.90106201171875
+  pitch: 16.464801788330078
+logoutlocation:
+  world: 589d8bf9-1b5c-4cd1-a568-92f6f1e2bbf2
+  world-name: Chthon
+  x: -78.84755542730466
+  y: 64.0
+  z: -160.5905054210877
+  yaw: -175.4092559814453
+  pitch: 14.758284568786621
+homes:
+  home:
+    world: 589d8bf9-1b5c-4cd1-a568-92f6f1e2bbf2
+    world-name: Chthon
+    x: -78.81160129196014
+    y: 64.0
+    z: -159.54477316478005
+    yaw: 89.67813110351562
+    pitch: 30.577667236328125

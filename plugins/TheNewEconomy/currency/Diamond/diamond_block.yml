@@ -1,0 +1,9 @@
+config-version: 2
+Info:
+  Single: "Diamond Block"
+  Plural: "Diamond Blocks"
+Options:
+  Weight: 180        # 1 block = 9 diamonds (9 × 20 minor units)
+  Material: "DIAMOND_BLOCK"
+  Crafting:
+    Enabled: false

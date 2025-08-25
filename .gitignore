@@ -1,0 +1,118 @@
+# ---- editor & runtime ----
+.vscode/
+cache/
+crash-reports/
+libraries/
+logs/
+versions/
+
+# ---- World data ----
+Chthon/
+Chthon_nether/
+Chthon_the_end/
+
+# ---- plugins: default deny, then explicit allows ----
+plugins/**             # ignore everything under plugins/
+!plugins/              # but keep traversing the directory
+!plugins/*.jar         # allow plugin jars directly under plugins/
+
+plugins/.paper-remapped/
+
+!plugins/AuraSkills/**
+!plugins/bStats/**
+!plugins/CarbonChat/**
+!plugins/DeathChest/**
+
+# DHSupport: ignore all except config.yml
+plugins/DHSupport/**
+!plugins/DHSupport/
+!plugins/DHSupport/config.yml
+
+plugins/dynmap/
+
+!plugins/Essentials/**
+!plugins/floodgate/**
+
+# Geyser-Spigot: ignore all except config.yml
+plugins/Geyser-Spigot/**
+!plugins/Geyser-Spigot/
+!plugins/Geyser-Spigot/config.yml
+
+# GeyserExtras: ignore all except config.yml
+plugins/GeyserExtras/**
+!plugins/GeyserExtras/
+!plugins/GeyserExtras/config.yml
+
+# GSit: ignore all except config.yml
+plugins/GSit/**
+!plugins/GSit/
+!plugins/GSit/config.yml
+
+# ImageFrame: ignore all except config.yml
+plugins/ImageFrame/**
+!plugins/ImageFrame/
+!plugins/ImageFrame/config.yml
+
+# LuckPerms: ignore all except config.yml
+plugins/LuckPerms/**
+!plugins/LuckPerms/
+!plugins/LuckPerms/config.yml
+
+# MiniMOTD: ignore all except listed configs
+plugins/MiniMOTD/**
+!plugins/MiniMOTD/
+!plugins/MiniMOTD/main.conf
+!plugins/MiniMOTD/plugin_settings.conf
+
+!plugins/SeeMore/**
+!plugins/PaperTweaks/**
+!plugins/PlaceholderAPI/**
+
+# Plan: ignore all except config.yml
+plugins/Plan/**
+!plugins/Plan/
+!plugins/Plan/config.yml
+
+# PrefiX: ignore all except config.yml
+plugins/PrefiX/**
+!plugins/PrefiX/
+!plugins/PrefiX/config.yml
+
+# QuickShop-Hikari: ignore all except config.yml
+plugins/QuickShop-Hikari/**
+!plugins/QuickShop-Hikari/
+!plugins/QuickShop-Hikari/config.yml
+
+# SkinsRestorer: ignore all except config.yml
+plugins/SkinsRestorer/**
+!plugins/SkinsRestorer/
+!plugins/SkinsRestorer/config.yml
+
+# Spark: ignore all except config.json
+plugins/spark/**
+!plugins/spark/
+!plugins/spark/config.json
+
+plugins/update/
+
+!plugins/Vault/**
+!plugins/ViaBackwards/**
+!plugins/ViaVersion/**
+!plugins/voicechat/**
+
+# WorldEdit: ignore all except config.yml
+plugins/WorldEdit/**
+!plugins/WorldEdit/
+!plugins/WorldEdit/config.yml
+
+!plugins/WorldEditSelectionVisualizer/**
+
+# WorldGuard: ignore all except config.yml
+plugins/WorldGuard/**
+!plugins/WorldGuard/
+!plugins/WorldGuard/config.yml
+
+# WorldGuardRegionProtect: ignore all except config.yml
+plugins/WorldGuardRegionProtect/**
+!plugins/WorldGuardRegionProtect/
+!plugins/WorldGuardRegionProtect/config.yml
