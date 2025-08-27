@@ -1,8 +1,8 @@
 [
   {
-    "uuid": "c8729b45-2363-4e12-8646-f7e0ba93a561",
-    "name": "SabbaticGoatee",
+    "uuid": "35a9ddfb-569d-41c9-95b8-c9764a3c881a",
+    "name": "SabbaticGoat",
     "level": 4,
-    "bypassesPlayerLimit": true
+    "bypassesPlayerLimit": false
   }
 ]

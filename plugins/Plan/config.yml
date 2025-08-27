@@ -109,7 +109,7 @@ Data_gathering:
     Geolocations: true
     # Please accept the EULA to download GeoLite2 IP-Country Database
     # https://www.maxmind.com/en/geolite2/eula
-    Accept_GeoLite2_EULA: false
+    Accept_GeoLite2_EULA: true
     # This can be changed to your own MaxMind URL if you have license https://dev.maxmind.com/geoip/updating-databases?lang=en#directly-downloading-databases
     # e.g. https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country&license_key=YOUR_KEY&suffix=tar.gz
     Geolocation_Download_URL: "https://geodb.playeranalytics.net/GeoLite2-Country.mmdb"
@@ -240,6 +240,7 @@ World_aliases:
     List:
         world: world
         Chthon: "Chthon"
+        Chthon_nether: "Chthon_nether"
     # List of - "alias:regex" rules, Set alias of multiple worlds that match regex to group them
     Regex:
       - "Alias for world:^abc$"

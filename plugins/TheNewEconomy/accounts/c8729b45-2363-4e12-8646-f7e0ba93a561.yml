@@ -5,7 +5,7 @@ Info:
   Status: normal
   CreationDate: 1755449751144
   Pin: ''
-  LastOnline: 1755724892172
+  LastOnline: 1756265928171
 Holdings:
   Main Server:
     world:
@@ -16,5 +16,5 @@ Holdings:
     Chthon:
       86b2e602-79fa-4903-8da7-e6852012cf81:
         tne:VIRTUAL_HOLDINGS: '0'
-        tne:INVENTORY_HOLDINGS: '0'
+        tne:INVENTORY_HOLDINGS: '320.0'
         tne:ENDER_HOLDINGS: '0'

@@ -3,7 +3,7 @@ teleportauto: false
 godmode: false
 muted: false
 jailed: false
-ip-address: 161.28.213.21
+ip-address: 10.0.0.1
 afk: false
 socialspy: false
 npc: false
@@ -16,8 +16,8 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1755724892165
-  login: 1755724757150
+  logout: 1756265928164
+  login: 1756260312434
 money: '0'
 last-account-name: SabbaticGoatee
 lastlocation:
@@ -31,11 +31,11 @@ lastlocation:
 logoutlocation:
   world: 589d8bf9-1b5c-4cd1-a568-92f6f1e2bbf2
   world-name: Chthon
-  x: -78.84755542730466
+  x: -65.70156028639057
   y: 64.0
-  z: -160.5905054210877
-  yaw: -175.4092559814453
-  pitch: 14.758284568786621
+  z: -134.78658450076668
+  yaw: 14.55003547668457
+  pitch: 15.749999046325684
 homes:
   home:
     world: 589d8bf9-1b5c-4cd1-a568-92f6f1e2bbf2
